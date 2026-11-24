@@ -1,0 +1,62 @@
+import type { Student, StudentStatus } from "../types";
+
+function student(
+  sequence: number,
+  firstName: string,
+  lastName: string,
+  nickname: string,
+  parentName: string,
+  phone: string,
+  registrationDate: string,
+  status: StudentStatus,
+  note: string,
+): Student {
+  return {
+    id: `STU-${String(sequence).padStart(4, "0")}`,
+    firstName,
+    lastName,
+    nickname,
+    parentName,
+    phone,
+    registrationDate,
+    status,
+    note,
+    createdAt: `${registrationDate}T02:00:00.000Z`,
+  };
+}
+
+/** Fictional students for the staff prototype. Contact details are not real. */
+export const SEED_STUDENTS: Student[] = [
+  student(1, "Ananda", "Chaiyaporn", "Nong", "Malee Chaiyaporn", "081-203-4401", "2024-06-12", "active", "Prefers Saturday morning classes."),
+  student(2, "Busara", "Thongchai", "Bam", "Somsak Thongchai", "081-203-4402", "2024-08-03", "active", "Sensitive to chalk dust. Seat near a window when possible."),
+  student(3, "Chaiwat", "Rattanakul", "Win", "Nittaya Rattanakul", "081-203-4403", "2024-09-19", "active", ""),
+  student(4, "Darika", "Sombat", "Dao", "Wipa Sombat", "081-203-4404", "2024-11-02", "active", "Sibling studies piano on Thursday evenings."),
+  student(5, "Ekkachai", "Phongphaew", "Ek", "Prasit Phongphaew", "081-203-4405", "2025-01-15", "active", "Preparing for the SAT in March."),
+  student(6, "Fahsai", "Meechai", "Fah", "Duangporn Meechai", "081-203-4406", "2025-02-20", "inactive", "Paused lessons after moving to Chiang Mai."),
+  student(7, "Ganokwan", "Lertsiri", "Nok", "Anong Lertsiri", "081-203-4407", "2025-03-11", "active", ""),
+  student(8, "Harit", "Boonmee", "Hart", "Siriwan Boonmee", "081-203-4408", "2025-04-08", "active", "Completed the chemistry track last term."),
+  student(9, "Inthira", "Kaewmanee", "Int", "Somchai Kaewmanee", "081-203-4409", "2025-05-22", "active", "Needs a short written summary after class."),
+  student(10, "Jirawat", "Suksan", "Jira", "Porntip Suksan", "081-203-4410", "2025-06-18", "inactive", "Family requested a hold for this school term."),
+  student(11, "Kamonwan", "Dechaphan", "Mon", "Wichian Dechaphan", "081-203-4411", "2025-07-09", "active", ""),
+  student(12, "Lalita", "Prasert", "Mint", "Sirilak Prasert", "081-203-4412", "2025-08-14", "active", "Strong in algebra and currently reviewing geometry."),
+  student(13, "Manop", "Charoensuk", "Man", "Jintana Charoensuk", "081-203-4413", "2025-09-01", "active", "Registered. Course selection is still open."),
+  student(14, "Nattaya", "Wongsuwan", "Nat", "Prawit Wongsuwan", "081-203-4414", "2025-09-28", "active", ""),
+  student(15, "Orathai", "Klinchan", "Ora", "Suwanna Klinchan", "081-203-4415", "2025-10-16", "inactive", "Withdrew before the first class."),
+  student(16, "Pawat", "Srisuk", "Paw", "Mali Srisuk", "081-203-4416", "2025-11-05", "active", ""),
+  student(17, "Ratchanee", "Phumiphat", "Rat", "Thaworn Phumiphat", "081-203-4417", "2025-12-12", "active", "Waiting for a weekday evening section."),
+  student(18, "Sarawut", "Khamdee", "Bas", "Nipaporn Khamdee", "081-203-4418", "2026-01-20", "active", ""),
+  student(19, "Thitima", "Aree", "Tim", "Boonlert Aree", "081-203-4419", "2026-02-17", "inactive", "Finished junior English and has not re-enrolled."),
+  student(20, "Ubonwan", "Srichai", "Bon", "Wanchai Srichai", "081-203-4420", "2026-03-09", "active", ""),
+  student(21, "Vichai", "Nakhon", "Vee", "Kannika Nakhon", "081-203-4421", "2026-04-21", "active", "Trial period ended. No course chosen yet."),
+  student(22, "Wanwisa", "Petchsri", "Wan", "Apichat Petchsri", "081-203-4422", "2026-05-13", "active", ""),
+  student(23, "Yodsak", "Maneerat", "Yod", "Sunee Maneerat", "081-203-4423", "2026-06-30", "inactive", "On leave for a school exchange program."),
+  student(24, "Arisa", "Kittisak", "Ice", "Naruemon Kittisak", "081-203-4424", "2026-07-22", "active", ""),
+  student(25, "Benyapa", "Sutham", "Ben", "Kriangsak Sutham", "081-203-4425", "2026-08-18", "active", ""),
+  student(26, "Chanakarn", "Wongsawat", "Kan", "Patchara Wongsawat", "081-203-4426", "2026-09-07", "active", "Asked to start after midterms. Not enrolled yet."),
+  student(27, "Duangjai", "Promma", "Duang", "Somkid Promma", "081-203-4427", "2026-11-03", "active", "New student. Placed in junior conversation."),
+  student(28, "Eakapon", "Sittichai", "Aek", "Rungnapa Sittichai", "081-203-4428", "2026-11-09", "inactive", "Registered this month, then deferred the start date."),
+  student(29, "Fonthip", "Charoen", "Fon", "Manit Charoen", "081-203-4429", "2026-11-12", "active", "Interested in weekend coding classes."),
+  student(30, "Gun", "Siriwong", "Gun", "Lawan Siriwong", "081-203-4430", "2026-11-18", "active", "Beginner piano. Has a keyboard at home."),
+  student(31, "Hataichanok", "Rungruang", "Hata", "Preecha Rungruang", "081-203-4431", "2026-11-21", "inactive", "Duplicate inquiry. Record kept for reference."),
+  student(32, "Itsara", "Phongphit", "It", "Wilai Phongphit", "081-203-4432", "2026-11-23", "active", "Walk-in registration. Course not assigned yet."),
+];
